@@ -94,12 +94,13 @@ SUBSYSTEM_DEF(chat)
 	//Some macros remain in the string even after parsing and fuck up the eventual output
 	message = replacetextEx(message, "\n", "<br>")
 	message += "<br>"
+	message = utf_goon(message)
 
 	var/encoded_message = message
 
 	//Grab us a client if possible
-	if(islist(target))		
-		
+	if(islist(target))
+
 		for(var/T in target)
 			var/client/C
 
